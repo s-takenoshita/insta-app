@@ -11,6 +11,9 @@
 
   <body>
     <div class="container">
+      <%= link_to 'login', new_user_session_path %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
+
       <% if flash.present? %>
           <div class="flash">
             <div class="flash_massage">

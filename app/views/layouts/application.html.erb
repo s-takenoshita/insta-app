@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <div class="container">
+      <% if flash.present? %>
+          <div class="flash">
+            <div class="flash_massage">
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

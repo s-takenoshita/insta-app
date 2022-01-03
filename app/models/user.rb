@@ -6,4 +6,11 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  def avatar_image
+    if self.avatar&.attached?
+      self.avatar
+    else
+      'default-avatar.png'
+    end
+  end
 end

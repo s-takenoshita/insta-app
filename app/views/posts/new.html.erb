@@ -16,6 +16,12 @@
     <div>
       <%= f.text_field :content, class: 'text' %>
     </div>
+    <div>
+      <%= f.label :images, '+ Album' %>
+    </div>
+    <div>
+      <%= f.file_field :images, multiple: true %>
+    </div>
     <%= f.submit 'Submit', class: 'btn-primary' %>
   <% end %>
 

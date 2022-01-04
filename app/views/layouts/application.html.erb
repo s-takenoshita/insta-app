@@ -10,14 +10,14 @@
   </head>
 
   <body>
-    <% if current_user.present? %>
-      <p>こんにちは、<%= current_user.name %>さん！</p>
-      <%= image_tag current_user.avatar_image %>
-    <% else %>
-      <p>こんにちは、ゲストさん！</p>
-    <% end %>
-    
     <div class="container">
+      <% if current_user.present? %>
+        <p>こんにちは、<%= current_user.name %>さん！</p>
+        <%= image_tag current_user.avatar_image %>
+      <% else %>
+        <p>こんにちは、ゲストさん！</p>
+      <% end %>
+    
       <%= link_to 'login', new_user_session_path %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
       <%= link_to 'Edit', edit_user_registration_path %>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>New Post</h2>
+
+  <% if @post.errors.present? %>
+    <ul class='error_message'>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form_with(model: @post, url: posts_path, method: 'post', local: true) do |f| %>
+    <div>
+      <%= f.label :content, 'Content' %>
+    </div>
+    <div>
+      <%= f.text_field :content, class: 'text' %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+
+</div>

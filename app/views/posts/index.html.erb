@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>post_list</h2>
+
+  <div class="posts_new">
+    <%= link_to 'new', new_post_path %>
+  </div>
+
+  <% @posts.each do |post| %>
+    <div class="post">
+      <%= post.content %>
+    </div>
+  <% end %>
+
+</div>

@@ -7,7 +7,19 @@
 
   <% @posts.each do |post| %>
     <div class="post">
-      <%= post.content %>
+      <div class="post-head">
+        post-head
+      </div>
+      <div class="post-body">
+        <% if post.images.attached? %>
+          <% post.images.each do |image| %>
+            <%= image_tag image %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="post-footer">
+        <%= post.content %>
+      </div>
     </div>
   <% end %>
 

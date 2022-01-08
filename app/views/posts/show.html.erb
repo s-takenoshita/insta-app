@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>post_show</h2>
+
+  <div class="posts_delete">
+    <%= link_to 'delete', post_path(@post), method: :delete %>
+  </div>
+
+  <div class="post">
+    <div class="post-head">
+      post-head
+    </div>
+
+    <div class="post-body">
+      <% if @post.images.attached? %>
+        <% @post.images.each do |image| %>
+          <%= image_tag image %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="post-footer">
+      <%= @post.content %>
+    </div>
+  </div>
+
+</div>

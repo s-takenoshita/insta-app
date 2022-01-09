@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def show
     # binding.pry
-
+    @comments = @post.comments
   end
 
   def new

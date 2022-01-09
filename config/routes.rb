@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
     resource :like, only: [:create, :destroy]
   end
+
+  resource :accounts, only: [:show]
   
+  resources :follows, only: [:create, :destroy]
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

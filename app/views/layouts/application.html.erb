@@ -11,6 +11,8 @@
 
   <body>
     <div class="container">
+      <%= link_to 'Home', root_path %>
+
       <% if current_user.present? %>
         <p>こんにちは、<%= current_user.name %>さん！</p>
         <%= image_tag current_user.avatar_image %>

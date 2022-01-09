@@ -1,16 +1,16 @@
 <div class="container">
   <h2>post_show</h2>
 
-  <div class="posts_delete">
+  <div class="post_action">
     <%= link_to 'delete', post_path(@post), method: :delete %>
+    <%= link_to 'edit', edit_post_path(@post) %>
   </div>
 
   <div class="post">
-    <div class="post-head">
-      post-head
+    <div class="post_head">
     </div>
 
-    <div class="post-body">
+    <div class="post_body">
       <% if @post.images.attached? %>
         <% @post.images.each do |image| %>
           <%= image_tag image %>
@@ -18,9 +18,19 @@
       <% end %>
     </div>
 
-    <div class="post-footer">
+    <div class="post_footer">
       <%= @post.content %>
     </div>
+  </div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <% @comments.each do |comment| %>
+      <div class="comments_comment">
+        <%= comment.comment %>
+      </div>
+    <% end %>
   </div>
 
 </div>

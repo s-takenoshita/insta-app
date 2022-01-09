@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     resource :like, only: [:create, :destroy]
   end
 
-  resource :accounts, only: [:show]
-  
+  resources :accounts, only: [:show]
+
   resources :follows, only: [:create, :destroy]
 
   devise_scope :user do

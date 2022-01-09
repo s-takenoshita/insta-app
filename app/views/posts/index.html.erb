@@ -7,10 +7,12 @@
 
   <% @posts.each do |post| %>
     <div class="post">
-      <div class="post_head">
-        <%= image_tag post.user.avatar_image %>
-        <%= post.user.name %>
-      </div>
+      <%= link_to account_path(post.user_id) do %>
+        <div class="post_head">
+          <%= image_tag post.user.avatar_image %>
+          <%= post.user.name %>
+        </div>
+      <% end %>
       <%= link_to post_path(post) do %>
         <div class="post_body">
           <% if post.images.attached? %>

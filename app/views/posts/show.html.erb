@@ -1,8 +1,9 @@
 <div class="container">
   <h2>post_show</h2>
 
-  <div class="posts_delete">
+  <div class="post_action">
     <%= link_to 'delete', post_path(@post), method: :delete %>
+    <%= link_to 'edit', edit_post_path(@post) %>
   </div>
 
   <div class="post">

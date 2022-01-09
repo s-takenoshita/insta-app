@@ -2,4 +2,5 @@
   <h2>account_show</h2>
   <%= image_tag @user.avatar_image %>
   <%= @user.name %>
+  <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
 </div>

@@ -1,0 +1,15 @@
+.post {
+  margin-top: 16px;
+  
+  &_head {
+    img {
+      width: 32px;
+    }
+  }
+
+  &_action {
+    img {
+      width: 16px;
+    }
+  }
+}

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # get '/' => 'home#index'
   root to: "posts#index"
 
-  resources :posts
+  resources :posts do
+    resource :like, only: [:create, :destroy]
+  end
   
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

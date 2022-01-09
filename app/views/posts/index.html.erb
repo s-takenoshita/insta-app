@@ -23,7 +23,15 @@
         </div>
       <% end %>
       <div class="post_action">
-        <%= image_tag 'heart-active.svg' %>
+        <% if current_user.has_liked?(post) %>
+          <%= link_to post_like_path(post), method: :delete do %>
+            <%= image_tag 'heart-active.svg' %>
+          <%  end %>
+        <% else %>
+          <%= link_to post_like_path(post), method: :post do %>
+            <%= image_tag 'heart.svg' %>
+          <%  end %>
+        <%  end %>
         <%= image_tag 'comment.png' %>
         <%= image_tag 'retweet.png' %>
       </div>

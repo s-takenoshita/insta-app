@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    binding.pry
+    # binding.pry
 
   end
 

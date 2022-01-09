@@ -7,11 +7,12 @@
 
   <% @posts.each do |post| %>
     <div class="post">
-      <div class="post-head">
-        post-head
+      <div class="post_head">
+        <%= image_tag post.user.avatar_image %>
+        <%= post.user.name %>
       </div>
       <%= link_to post_path(post) do %>
-        <div class="post-body">
+        <div class="post_body">
           <% if post.images.attached? %>
             <% post.images.each do |image| %>
               <%= image_tag image %>
@@ -21,7 +22,12 @@
           <% end %>
         </div>
       <% end %>
-      <div class="post-footer">
+      <div class="post_action">
+        <%= image_tag 'heart-active.svg' %>
+        <%= image_tag 'comment.png' %>
+        <%= image_tag 'retweet.png' %>
+      </div>
+      <div class="post_footer">
         <%= post.content %>
       </div>
     </div>

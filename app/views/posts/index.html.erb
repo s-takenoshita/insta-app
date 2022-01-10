@@ -26,13 +26,11 @@
       <% end %>
       <div class="post_action">
         <% if current_user.has_liked?(post) %>
-          <%= link_to post_like_path(post), method: :delete do %>
-            <%= image_tag 'heart-active.svg' %>
-          <%  end %>
+          <%= image_tag 'heart-active.svg' %>
+          <%= image_tag 'heart.svg', class: 'hidden' %>
         <% else %>
-          <%= link_to post_like_path(post), method: :post do %>
-            <%= image_tag 'heart.svg' %>
-          <%  end %>
+          <%= image_tag 'heart-active.svg', class: 'hidden' %>
+          <%= image_tag 'heart.svg' %>
         <%  end %>
         <%= link_to new_post_comment_path(post) do %>
           <%= image_tag 'comment.png' %>

@@ -1,3 +1,5 @@
+@import 'variables';
+
 .post {
   margin-top: 16px;
   
@@ -7,6 +9,11 @@
     }
   }
 
+  &_body {
+    img {
+      max-width: $container-width - 32;
+    }
+  }
   &_action {
     img {
       width: 16px;

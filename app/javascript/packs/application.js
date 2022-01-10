@@ -27,4 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
+  $('.active-heart').on('click', () => {
+    console.log('active clicked')
+  })
+
+  $('.inactive-heart').on('click', () => {
+    console.log('inactive clicked')
+  })
 })

@@ -26,11 +26,11 @@
       <% end %>
       <div class="post_action">
         <% if current_user.has_liked?(post) %>
-          <%= image_tag 'heart-active.svg' %>
-          <%= image_tag 'heart.svg', class: 'hidden' %>
+          <%= image_tag 'heart-active.svg', class: 'active-heart' %>
+          <%= image_tag 'heart.svg', class: 'hidden inactive-heart' %>
         <% else %>
-          <%= image_tag 'heart-active.svg', class: 'hidden' %>
-          <%= image_tag 'heart.svg' %>
+          <%= image_tag 'heart-active.svg', class: 'hidden active-heart' %>
+          <%= image_tag 'heart.svg', class: 'inactive-heart' %>
         <%  end %>
         <%= link_to new_post_comment_path(post) do %>
           <%= image_tag 'comment.png' %>

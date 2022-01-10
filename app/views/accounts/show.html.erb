@@ -7,4 +7,20 @@
   <% else %>
     <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
   <% end %>
+
+  <div class="info">
+    <div class="info_data">
+    </div>
+    <div class="info_label">
+      <div class="info_label_posts">
+        Posts
+      </div>
+      <div class="info_label_followers">
+        Followers
+      </div>
+      <div class="info_label_following">
+        Following
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,9 @@
+@import 'variables';
+
+.info {
+
+  &_label {
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -2,5 +2,9 @@
   <h2>account_show</h2>
   <%= image_tag @user.avatar_image %>
   <%= @user.name %>
-  <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
+  <% if current_user&.has_followed?(@user) %>
+    <%= link_to 'Unfollow', account_unfollows_path(@user), method: 'post' %>
+  <% else %>
+    <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
+  <% end %>
 </div>

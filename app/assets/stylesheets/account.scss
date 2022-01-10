@@ -1,0 +1,35 @@
+@import 'variables';
+
+.account {
+
+  &_head {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    &_name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  &_img {
+    text-align: center;
+  }
+}
+
+.info {
+  margin-top: 32px;
+  height: 100px;
+
+  &_data {
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &_label {
+    display: flex;
+    justify-content: space-around;
+  }
+}

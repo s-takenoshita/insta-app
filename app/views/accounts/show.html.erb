@@ -1,10 +1,45 @@
 <div class="container">
   <h2>account_show</h2>
-  <%= image_tag @user.avatar_image %>
-  <%= @user.name %>
-  <% if current_user&.has_followed?(@user) %>
-    <%= link_to 'Unfollow', account_unfollows_path(@user), method: 'post' %>
-  <% else %>
-    <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
-  <% end %>
+
+  <div class="account">
+    <div class="account_head">
+      <%= image_tag 'toleftarrow.png' %>
+      <div class="account_head_name">
+        <%= @user.name %>
+      </div>
+      <% if current_user&.has_followed?(@user) %>
+        <%= link_to 'Unfollow', account_unfollows_path(@user), method: 'post' %>
+      <% else %>
+        <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
+      <% end %>
+    </div>
+    <div class="account_img">
+      <%= image_tag @user.avatar_image %>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="info_data">
+      <div class="info_data_posts">
+        <%= @user.posts_count %>
+      </div>
+      <div class="info_data_followers">
+        <%= @user.followers_count %>
+      </div>
+      <div class="info_data_following">
+        <%= @user.followings_count %>
+      </div>
+    </div>
+    <div class="info_label">
+      <div class="info_label_posts">
+        Posts
+      </div>
+      <div class="info_label_followers">
+        Followers
+      </div>
+      <div class="info_label_following">
+        Following
+      </div>
+    </div>
+  </div>
 </div>

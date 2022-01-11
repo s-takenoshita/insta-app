@@ -24,22 +24,23 @@
           <% end %>
         </div>
       <% end %>
-      <div class="post_action" id="<%= post.id %>">
+      <div class="post_action" >
         <% if current_user.has_liked?(post) %>
-          <div class="active-heart">
+          <div class="active-heart post<%= post.id %>" id="<%= post.id %>">
             <%= image_tag 'heart-active.svg' %>
           </div>
-          <div class="inactive-heart hidden">
+          <div class="inactive-heart post<%= post.id %> hidden" id="<%= post.id %>">
             <%= image_tag 'heart.svg' %>
           </div>
         <% else %>
-          <div class="active-heart hidden">
+          <div class="active-heart post<%= post.id %> hidden" id="<%= post.id %>">
             <%= image_tag 'heart-active.svg' %>
           </div>
-          <div class="inactive-heart">
+          <div class="inactive-heart post<%= post.id %>" id="<%= post.id %>">
             <%= image_tag 'heart.svg' %>
           </div>
-        <%  end %>
+        <% end %>
+
         <%= link_to new_post_comment_path(post) do %>
           <%= image_tag 'comment.png' %>
         <%  end %>

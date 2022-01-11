@@ -29,11 +29,44 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
-  $('.active-heart').on('click', () => {
-    console.log('active clicked')
+  $('.active-heart').on('click', (e) => {
+    // e.preventDefault();
+    // var id = $(e.currentTarget).attr('id')
+    const terget = e.currentTarget.parentNode
+    const postId = e.currentTarget.parentNode.attributes.getNamedItem('id').value
+    console.log(postId)
+    debugger
+    axios.delete(`/posts/${postId}/like`)
+    .then((response) => {
+      if (response.data.status ===  'ok') {
+        $('.active-heart').addClass('hidden')
+        $('.inactive-heart').removeClass('hidden')
+      }
+    })
+    .catch((e) => {
+      window.alert('Error')
+      console.log(e)
+    })
+    // const postId = $(this).parent().attr('id')
+    // console.log('active clicked')
   })
 
-  $('.inactive-heart').on('click', () => {
-    console.log('inactive clicked')
+  $('.inactive-heart').on('click', (e) => {
+    e.preventDefault();
+    const id = $(e.currentTarget).attr('id') 
+    debugger
+    const postId = e.currentTarget.parentNode.attributes.getNamedItem('id').value
+    console.log(postId)
+    axios.post(`/posts/${postId}/like`)
+    .then((response) => {
+      if (response.data.status ===  'ok') {
+        $('.active-heart').removeClass('hidden')
+        $('.inactive-heart').addClass('hidden')
+      }
+    })
+    .catch((e) => {
+      window.alert('Error')
+      console.log(e)
+    })
   })
 })

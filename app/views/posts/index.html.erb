@@ -6,7 +6,7 @@
   </div>
 
   <% @posts.each do |post| %>
-    <div class="post">
+    <div class="post" >
       <%= link_to account_path(post.user_id) do %>
         <div class="post_head">
           <%= image_tag post.user.avatar_image %>
@@ -24,13 +24,21 @@
           <% end %>
         </div>
       <% end %>
-      <div class="post_action">
+      <div class="post_action" id="<%= post.id %>">
         <% if current_user.has_liked?(post) %>
-          <%= image_tag 'heart-active.svg', class: 'active-heart' %>
-          <%= image_tag 'heart.svg', class: 'hidden inactive-heart' %>
+          <div class="active-heart">
+            <%= image_tag 'heart-active.svg' %>
+          </div>
+          <div class="inactive-heart hidden">
+            <%= image_tag 'heart.svg' %>
+          </div>
         <% else %>
-          <%= image_tag 'heart-active.svg', class: 'hidden active-heart' %>
-          <%= image_tag 'heart.svg', class: 'inactive-heart' %>
+          <div class="active-heart hidden">
+            <%= image_tag 'heart-active.svg' %>
+          </div>
+          <div class="inactive-heart">
+            <%= image_tag 'heart.svg' %>
+          </div>
         <%  end %>
         <%= link_to new_post_comment_path(post) do %>
           <%= image_tag 'comment.png' %>

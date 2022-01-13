@@ -7,14 +7,10 @@ const dataset = $('#post_show').data()
 const postId = dataset.postid
 
 document.addEventListener('DOMContentLoaded', () => {
-  // const dataset = $('#post_show').data()
-  // const postId = dataset.postid
   axios.get(`/posts/${postId}/comments`)
   .then((response) => {
-    // debugger
     const comments = response.data
     comments.forEach((comment) => {
-      // console.log(comment)
       $('.comments_container').append(
         `<div class="post_comment"><p>${comment.comment}</p></div>`
       )

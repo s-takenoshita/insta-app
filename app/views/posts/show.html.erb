@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="post_show" data-postId="<%= @post.id %>">
   <h2>post_show</h2>
 
   <div class="post_action">
@@ -23,14 +23,15 @@
     </div>
   </div>
 
-
   <div class="comments">
     <h2>Comments</h2>
-    <% @comments.each do |comment| %>
-      <div class="comments_comment">
-        <%= comment.comment %>
-      </div>
-    <% end %>
+    <div class="comments_container">
+    <%# JavaScript %>
+    </div>
+    <input type="text" id="comment">
+    <button class="Comments_btn btn-primary" type="button"> Comment </button>
   </div>
 
 </div>
+
+<%= javascript_pack_tag 'post', 'data-turbolinks-track': 'reload' %>

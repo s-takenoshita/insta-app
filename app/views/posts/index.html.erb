@@ -40,12 +40,14 @@
             <%= image_tag 'heart.svg' %>
           </div>
         <% end %>
-
-        <%= link_to new_post_comment_path(post) do %>
-          <%= image_tag 'comment.png' %>
-        <%  end %>
-        <%= image_tag 'retweet.png' %>
       </div>
+
+      <%= link_to post_comments_path(post) do %>
+        <%= image_tag 'comment.png' %>
+      <%  end %>
+      
+      <%= image_tag 'retweet.png' %>
+
       <div class="post_footer">
         <%= post.content %>
       </div>
@@ -53,3 +55,5 @@
   <% end %>
 
 </div>
+
+<%= javascript_pack_tag 'postIndex', 'data-turbolinks-track': 'reload' %>

@@ -6,14 +6,19 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 const dataset = $('#post_show').data()
 const postId = dataset.postid
 
+const appendNewComment = (comment) => {
+  $('.comments_container').append(
+    `<div class="post_comment"><p>${comment.comment}</p></div>`
+  )
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  // debugger
   axios.get(`/posts/${postId}/comments`)
   .then((response) => {
     const comments = response.data
     comments.forEach((comment) => {
-      $('.comments_container').append(
-        `<div class="post_comment"><p>${comment.comment}</p></div>`
-      )
+      appendNewComment(comment)
     })
   })
 })
@@ -25,9 +30,7 @@ $('.Comments_btn').on('click', (e) => {
   })
     .then((response) => {
       const comment = response.data
-      $('.comments_container').append(
-        `<div class="post_comment"><p>${comment.comment}</p></div>`
-      )
+      appendNewComment(comment)
       $('#comment').val('')
     })
 })

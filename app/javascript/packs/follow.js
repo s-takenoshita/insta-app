@@ -5,17 +5,24 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 document.addEventListener('DOMContentLoaded', () => {
   const followVal = $('.follow').text()
-  debugger
-  window.alert(followVal)
 
 })
 
 $('.follow').on('click', (e) => {
   const dataset = $('#account_show').data()
   const userId = dataset.userid
-  axios.post(`/accounts/${userId}/follows`)
+  const followVal = $('.follow').text()
+  debugger
+  if (followVal === 'Unfollow') {
+    axios.post(`/accounts/${userId}/follows`)
     .then((response) => {
-      debugger
-      window.alert(userId)
+      $('.follow').text('Follow')
     })
+  } else {
+    axios.post(`/accounts/${userId}/unfollows`)
+    .then((response) => {
+      $('.follow').text('Unfollow')
+    })
+  }
+  
 })

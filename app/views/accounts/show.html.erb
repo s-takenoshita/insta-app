@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="account_show" data-userId="<%= @user.id %>">
   <h2>account_show</h2>
 
   <div class="account">
@@ -8,9 +8,9 @@
         <%= @user.name %>
       </div>
       <% if current_user&.has_followed?(@user) %>
-        <%= link_to 'Unfollow', account_unfollows_path(@user), method: 'post' %>
+        <div class="follow">Unfollow</div>
       <% else %>
-        <%= link_to 'Follow', account_follows_path(@user), method: 'post' %>
+        <div class="follow">Follow</div>
       <% end %>
     </div>
     <div class="account_img">
@@ -43,3 +43,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'follow', 'data-turbolinks-track': 'reload' %>

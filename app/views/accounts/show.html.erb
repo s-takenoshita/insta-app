@@ -40,7 +40,9 @@
         <% end %>
       </div>
       <div class="info_label_following">
-        Following
+        <%= link_to account_followings_path(@user.id) do %>
+          Following
+        <% end %>
       </div>
     </div>
   </div>

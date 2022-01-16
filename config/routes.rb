@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   end
 
   resources :accounts, only: [:show] do
-    resources :follows, only: [:index, :create]
-    resources :unfollows, only: [:index, :create]
+    resources :follows, only: [:create]
+    resources :unfollows, only: [:create]
 
     resources :followers, only: [:index]
+    resources :followings, only: [:index]
   end
 
   devise_scope :user do

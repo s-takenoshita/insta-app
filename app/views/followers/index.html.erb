@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>followers</h2>
+
+  <% @followers.each do |follower| %>
+    <div class="follower">
+      <%= image_tag follower.avatar_image %>
+      <%= follower.name %>
+    </div>
+  <% end %>
+</div>

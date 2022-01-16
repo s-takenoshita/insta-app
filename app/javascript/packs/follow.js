@@ -12,16 +12,19 @@ $('.follow').on('click', (e) => {
   const dataset = $('#account_show').data()
   const userId = dataset.userid
   const followVal = $('.follow').text()
-  debugger
   if (followVal === 'Unfollow') {
-    axios.post(`/accounts/${userId}/follows`)
-    .then((response) => {
-      $('.follow').text('Follow')
-    })
-  } else {
     axios.post(`/accounts/${userId}/unfollows`)
     .then((response) => {
+      debugger
+      $('.follow').text('Follow')
+      $('.info_data_followers').text(response.data.count)
+    })
+  } else {
+    axios.post(`/accounts/${userId}/follows`)
+    .then((response) => {
+      debugger
       $('.follow').text('Unfollow')
+      $('.info_data_followers').text(response.data.count)
     })
   }
   

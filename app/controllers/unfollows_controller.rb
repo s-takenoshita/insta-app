@@ -7,4 +7,5 @@ class UnfollowsController < ApplicationController
     count = account.followers.count
     render json: {status: 'ok', count: count}
   end
+
 end

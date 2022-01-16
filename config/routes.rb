@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :accounts, only: [:show] do
     resources :follows, only: [:index, :create]
     resources :unfollows, only: [:index, :create]
+
+    resources :followers, only: [:index]
   end
 
   devise_scope :user do

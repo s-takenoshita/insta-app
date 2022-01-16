@@ -8,9 +8,4 @@ class FollowsController < ApplicationController
     render json: {status: 'ok', count: count}
   end
 
-  def index
-    account = User.find(params[:account_id])
-    @followers = account.followers()
-    render 'followers/index'
-  end
 end

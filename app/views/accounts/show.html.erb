@@ -35,7 +35,9 @@
         Posts
       </div>
       <div class="info_label_followers">
-        Followers
+        <%= link_to account_follows_path(@user.id) do %>
+          Followers
+        <% end %>
       </div>
       <div class="info_label_following">
         Following

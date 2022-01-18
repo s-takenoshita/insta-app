@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'active_decorator'                      # 2022/01/10
 gem 'active_model_serializers'              # 2022/01/12
 gem 'devise'                                # 2022/01/03
+gem 'faker'                                 # 2022/01/18
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(id: "DESC")
-    render 'posts/index'
+    # render 'posts/index'
   end
 
   def show

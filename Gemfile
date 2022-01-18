@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'active_decorator'                      # 2022/01/10
 gem 'active_model_serializers'              # 2022/01/12
 gem 'devise'                                # 2022/01/03
+gem 'faker'                                 # 2022/01/18
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,6 +36,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'            # add 2022/01/05
+  gem 'rspec-rails'           # add 2022/01/18
+  gem 'factory_bot_rails'     # add 2022/01/18
 end
 
 group :development do

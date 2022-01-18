@@ -3,12 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
 
-  let!(:user) do
-    user = User.create!({
-      email: 'test@exsample.com',
-      password: '99999999'
-    })
-  end
+  let!(:user) { create(:user) }
 
   context '内容（content）が入力されている場合' do
     # # before方式

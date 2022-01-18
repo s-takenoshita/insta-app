@@ -18,11 +18,7 @@ RSpec.describe Post, type: :model do
     # end
 
     # let方式
-    let!(:post) do
-      post = user.posts.build({
-        content: Faker::Lorem.characters(number: 15)
-      })
-    end
+    let!(:post) { build(:post, user: user) }
 
     it 'Postデータを保存できる。' do
       expect(post).to be_valid
@@ -30,14 +26,14 @@ RSpec.describe Post, type: :model do
   end
 
   context '内容（content）の文字数が少ない場合' do
-    let!(:post) do
-      post = user.posts.create({
-        content: Faker::Lorem.characters(number: 2)
-      })
+    let!(:post) { build(:post, content: 'ab') }
+
+    before do
+      post.save
     end
 
     it 'Postデータを保存できない。' do
-      puts '----> ' + post.errors.messages[:content][0]
+      # puts '----> ' + post.errors.messages[:content][0]
       expect(post.errors.messages[:content][0]).to eq('is too short (minimum is 4 characters)')
     end
   end

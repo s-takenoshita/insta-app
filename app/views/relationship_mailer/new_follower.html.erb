@@ -2,3 +2,7 @@
   <%= @user.email %>
 </p>
 <p>フォローされました</p>
+
+<%= link_to account_url(@user) do %>
+  プロフィールへ
+<% end %>
